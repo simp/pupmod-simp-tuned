@@ -24,8 +24,6 @@ This module is a component of the [System Integrity Management Platform](https:/
 
 If you find any issues, they may be submitted to our [bug tracker](https://simp-project.atlassian.net/).
 
-**FIXME:** Ensure the *This is a SIMP module* section is correct and complete, then remove this message!
-
 This module is optimally designed for use within a larger SIMP ecosystem, but it can be used independently:
 
  * When included within the SIMP ecosystem, security compliance settings will be managed from the Puppet server.
