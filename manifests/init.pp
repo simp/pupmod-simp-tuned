@@ -37,19 +37,19 @@
 #     Enable the CPU tuning plugin.
 #
 class tuned (
-  Enum['deadline','as','cfq','noop'] $io_scheduler = 'deadline',
-  Array[String] $elevator_tune_devs = ['hd','sd','cciss'],
-  Boolean $use_sysctl               = true,
-  Boolean $use_sysctl_post          = false,
-  Integer $tuning_interval          = 10,
-  Boolean $diskmonitor_enable       = true,
-  Boolean $disktuning_enable        = true,
-  Boolean $disktuning_hdparm        = true,
-  Boolean $disktuning_alpm          = true,
-  Boolean $netmonitor_enable        = true,
-  Boolean $nettuning_enable         = true,
-  Boolean $cpumonitor_enable        = true,
-  Boolean $cputuning_enable         = true
+  Tuned::IoSchedule $io_scheduler             = 'deadline',
+  Array[String]     $elevator_tune_devs       = ['hd','sd','cciss'],
+  Boolean           $use_sysctl               = true,
+  Boolean           $use_sysctl_post          = false,
+  Integer           $tuning_interval          = 10,
+  Boolean           $diskmonitor_enable       = true,
+  Boolean           $disktuning_enable        = true,
+  Boolean           $disktuning_hdparm        = true,
+  Boolean           $disktuning_alpm          = true,
+  Boolean           $netmonitor_enable        = true,
+  Boolean           $nettuning_enable         = true,
+  Boolean           $cpumonitor_enable        = true,
+  Boolean           $cputuning_enable         = true
 ) {
 
   $ktune_name = 'tuned'
