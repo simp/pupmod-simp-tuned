@@ -67,7 +67,7 @@ tuned::io_scheduler: cfq
 
 ## Reference
 
-Please refer to the inline documentation within each source file, or to the module's generated YARD documentation for reference material.
+Please refer to [REFERENCE.md](REFERENCE.md)
 
 
 ## Limitations

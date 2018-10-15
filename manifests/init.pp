@@ -35,21 +35,23 @@
 #     Enable the CPU monitoring plugin.
 # @param cputuning_enable
 #     Enable the CPU tuning plugin.
+# @param package_ensure The ensure status of the tuned package
 #
 class tuned (
-  Tuned::IoSchedule $io_scheduler             = 'deadline',
-  Array[String]     $elevator_tune_devs       = ['hd','sd','cciss'],
-  Boolean           $use_sysctl               = true,
-  Boolean           $use_sysctl_post          = false,
-  Integer           $tuning_interval          = 10,
-  Boolean           $diskmonitor_enable       = true,
-  Boolean           $disktuning_enable        = true,
-  Boolean           $disktuning_hdparm        = true,
-  Boolean           $disktuning_alpm          = true,
-  Boolean           $netmonitor_enable        = true,
-  Boolean           $nettuning_enable         = true,
-  Boolean           $cpumonitor_enable        = true,
-  Boolean           $cputuning_enable         = true
+  Tuned::IoSchedule $io_scheduler       = 'deadline',
+  Array[String]     $elevator_tune_devs = ['hd','sd','cciss'],
+  Boolean           $use_sysctl         = true,
+  Boolean           $use_sysctl_post    = false,
+  Integer           $tuning_interval    = 10,
+  Boolean           $diskmonitor_enable = true,
+  Boolean           $disktuning_enable  = true,
+  Boolean           $disktuning_hdparm  = true,
+  Boolean           $disktuning_alpm    = true,
+  Boolean           $netmonitor_enable  = true,
+  Boolean           $nettuning_enable   = true,
+  Boolean           $cpumonitor_enable  = true,
+  Boolean           $cputuning_enable   = true,
+  String            $package_ensure     = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' }),
 ) {
 
   $ktune_name = 'tuned'
@@ -77,7 +79,7 @@ class tuned (
   }
 
   package { $ktune_name:
-    ensure => 'latest'
+    ensure => $package_ensure
   }
 
   service { $ktune_name:
