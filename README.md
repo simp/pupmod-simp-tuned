@@ -1,4 +1,8 @@
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html) [![Build Status](https://travis-ci.org/simp/pupmod-simp-tuned.svg)](https://travis-ci.org/simp/pupmod-simp-tuned) [![SIMP compatibility](https://img.shields.io/badge/SIMP%20compatibility-6.*-orange.svg)](https://img.shields.io/badge/SIMP%20compatibility-6.*-orange.svg)
+[![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/73/badge)](https://bestpractices.coreinfrastructure.org/projects/73)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/simp/tuned.svg)](https://forge.puppetlabs.com/simp/tuned)
+[![Puppet Forge Downloads](https://img.shields.io/puppetforge/dt/simp/tuned.svg)](https://forge.puppetlabs.com/simp/tuned)
+[![Build Status](https://travis-ci.org/simp/pupmod-simp-tuned.svg)](https://travis-ci.org/simp/pupmod-simp-tuned)
 
 #### Table of Contents
 
@@ -20,7 +24,8 @@ This Puppet module manages some facets of tuned and ktune.
 
 ### This is a SIMP module
 
-This module is a component of the [System Integrity Management Platform](https://github.com/NationalSecurityAgency/SIMP), a compliance-management framework built on Puppet.
+This module is a component of the [System Integrity Management Platform](https://simp-project.com),
+a compliance-management framework built on Puppet.
 
 If you find any issues, they may be submitted to our [bug tracker](https://simp-project.atlassian.net/).
 
