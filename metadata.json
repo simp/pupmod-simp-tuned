@@ -1,6 +1,6 @@
 {
   "name": "simp-tuned",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "SIMP Team",
   "summary": "A SIMP Puppet module for managing tuned/ktune",
   "license": "Apache-2.0",
