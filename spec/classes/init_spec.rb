@@ -22,12 +22,12 @@ describe 'tuned' do
           it { is_expected.to contain_file('/etc/sysctl.ktune') }
 
           it { is_expected.to contain_package('tuned') }
-          it { is_expected.to contain_service('tuned').with({
-            :require => ['Package[tuned]','File[/etc/sysconfig/ktune]']
-            })
+          it {
+            is_expected.to contain_service('tuned').with({
+                                                           require: ['Package[tuned]', 'File[/etc/sysconfig/ktune]']
+                                                         })
           }
         end
-
       end
     end
   end
