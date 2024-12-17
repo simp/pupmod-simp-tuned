@@ -2,11 +2,9 @@ require 'spec_helper'
 
 describe 'tuned' do
   context 'supported operating systems' do
-    on_supported_os.each do |os, facts|
+    on_supported_os.each do |os, os_facts|
       context "on #{os}" do
-        let(:facts) do
-          facts
-        end
+        let(:facts) { os_facts }
 
         context 'with default parameters' do
           let(:expected_tuned) { File.read('spec/expected/default_tuned.conf') }
@@ -22,12 +20,11 @@ describe 'tuned' do
           it { is_expected.to contain_file('/etc/sysctl.ktune') }
 
           it { is_expected.to contain_package('tuned') }
-          it { is_expected.to contain_service('tuned').with({
-            :require => ['Package[tuned]','File[/etc/sysconfig/ktune]']
-            })
+          it {
+            is_expected.to contain_service('tuned')
+              .with(require: ['Package[tuned]', 'File[/etc/sysconfig/ktune]'])
           }
         end
-
       end
     end
   end
