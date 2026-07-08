@@ -19,7 +19,7 @@ group :syntax do
 end
 
 group :test do
-  puppet_version = ENV.fetch('PUPPET_VERSION', ['>= 7', '< 9'])
+  puppet_version = ENV.fetch('PUPPET_VERSION', ['>= 8', '< 9'])
   openvox_version = ENV.fetch('OPENVOX_VERSION', puppet_version)
   gem 'hiera-puppet-helper'
   gem 'pathspec', '~> 0.2' if Gem::Requirement.create('< 2.6').satisfied_by?(Gem::Version.new(RUBY_VERSION.dup))
