@@ -53,7 +53,6 @@ class tuned (
   Boolean           $cputuning_enable   = true,
   String            $package_ensure     = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' }),
 ) {
-
   $ktune_name = 'tuned'
 
   file { '/etc/tuned.conf':
@@ -72,7 +71,7 @@ class tuned (
   }
 
   file { '/etc/sysctl.ktune':
-    ensure => 'present',
+    ensure => 'file',
     owner  => 'root',
     group  => 'root',
     mode   => '0640'
