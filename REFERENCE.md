@@ -165,4 +165,3 @@ Default value: `simplib::lookup('simp_options::package_ensure', { 'default_value
 The Tuned::IoSchedule data type.
 
 Alias of `Enum['deadline', 'as', 'cfq', 'noop']`
-
